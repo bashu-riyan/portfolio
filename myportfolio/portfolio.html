@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="Ie-edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MY POrt</title>
+    <script src="https://Kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+</head>
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    .toggle {
+        display: none;
+    }
+    
+    ul {
+        list-style: none;
+    }
+    
+    .firstsection {
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        background-color: rgb(223, 215, 215);
+        position: relative;
+        background-image: url("bos.jpg");
+        background-repeat: no-repeat;
+        background-size: 670px;
+        background-position: right bottom;
+        box-shadow: 0px 2px 12px rgb(26, 25, 25);
+    }
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 2px;
+        position: fixed;
+        padding: 10px 50px;
+        top: 0;
+        left: 0;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: aliceblue;
+        box-shadow: 2px 2px 12px rgb(185, 182, 182);
+        z-index: 1;
+    }
+    
+    .unorder {
+        display: flex;
+    }
+    
+    .unorder li a {
+        padding: 10px 15px;
+        font-size: 11px;
+        color: rgb(24, 23, 23);
+    }
+    
+    .mylogo {
+        font-size: 20px;
+        font-weight: bold;
+    }
+    
+    .en {
+        padding-right: 10px;
+    }
+    
+    .navbar li a:hover,
+    .navbar li a.active {
+        background-color: black;
+        color: rgb(245, 245, 245)!important;
+        font-weight: 700;
+        transition: all ease 0.5s;
+        border-radius: 14px;
+    }
+    
+    .name {
+        width: 500px;
+        position: absolute;
+        left: 20%;
+        top: 50%;
+    }
+    
+    .name p:nth-child(1),
+    .name .details {
+        color: rgb(0, 0, 0);
+        font-size: 16px;
+    }
+    
+    .name h1 {
+        letter-spacing: 3px;
+        font-size: 40px;
+    }
+    
+    .cv {
+        background-color: rgb(20, 20, 20);
+        color: white;
+        font-size: 10px;
+        font-weight: 2px;
+        padding: 8px 20px;
+    }
+    
+    .cv:hover {
+        background-color: rgb(71, 60, 60);
+        transition: all ease 0.7s;
+    }
+    
+    .soci {
+        position: absolute;
+        left: 50px;
+        bottom: 50px;
+        display: flex;
+    }
+    
+    .soci a {
+        margin: 5px 12px;
+    }
+    
+    .soci i {
+        color: rgb(0, 0, 0);
+        font-size: 20px;
+    }
+    
+    .soci i:hover {
+        color: rgb(255, 0, 0);
+        font-size: 25px;
+        transition: all ease 0.6s;
+    }
+    
+    .arrow {
+        align-self: end;
+        width: 500%;
+        height: 15%;
+        margin-bottom: 4em;
+        position: absolute;
+        bottom: 0px;
+        left: -3%;
+        border-right: 1px solid black;
+    }
+    
+    .arrow::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 11px 11px 0px 11px;
+        border-color: red transparent transparent transparent;
+        right: -0.7em;
+        bottom: -2px;
+    }
+    
+    #about {
+        width: 100%;
+        height: 100vh;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px 5px 0px 5px;
+        background-color: white;
+    }
+    
+    .about-text {
+        width: 50%;
+    }
+    
+    .about-text h1 {
+        color: green;
+        font-size: 5rem;
+    }
+    
+    .about-text h2 {
+        font-size: 3rem;
+        color: rgb(2, 2, 2);
+        font-weight: 400;
+    }
+    
+    .about-text p {
+        font-size: 1.2rem;
+        color: rgb(3, 3, 3);
+    }
+    
+    .about-text h1,
+    h2 {
+        margin: 0;
+        padding: 0;
+    }
+    
+    .about-mode {
+        margin-right: 15%;
+    }
+    
+    .about-mode a:hover {
+        padding: 70px;
+        background-color: red;
+        transition: all ease-in-out 1s;
+        border-radius: 25px;
+        box-shadow: 2px 2px 12px rgb(3, 1, 1);
+    }
+    
+    .btn {
+        margin-top: 50px;
+    }
+    
+    .btn button {
+        padding: 15px;
+        margin-left: 50px;
+        background-color: green;
+        color: white;
+        font-size: 16px;
+        border-radius: 40px;
+        outline: none;
+    }
+    
+    .btn button:hover {
+        padding: 4px 17px;
+        transition: all ease 0.3s;
+        background-color: rgb(57, 160, 53);
+        color: rgb(255, 255, 255);
+    }
+    
+    #service {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 40px;
+        background-color: white;
+    }
+    
+    .s-heading h1 {
+        padding: 0;
+        margin: 0;
+        font-size: 3rem;
+    }
+    
+    .s-heading p {
+        margin: 0;
+        padding: 0;
+        font-size: 1rem;
+        color: black;
+    }
+    
+    .s-heading {
+        text-align: center;
+        margin: 20px 0px;
+    }
+    
+    .s-box {
+        background-color: white;
+        width: 350px;
+        height: 350px;
+        border-radius: 10px;
+        box-shadow: 2px 2px 12px black;
+        margin-left: 8px;
+        overflow: hidden;
+    }
+    
+    .s-b-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .s-b-img {
+        width: 100%;
+        height: 70%;
+    }
+    
+    .s-b-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .s-b-text {
+        width: 100%;
+        height: 30%;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .s-b-text a {
+        margin: 0;
+        color: black;
+        font-size: 1.1rem;
+        display: block;
+        display: -webkit-box;
+        max-width: 80%;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-box-orient: vertical;
+    }
+    
+    .s-b-type {
+        color: rgb(0, 0, 0);
+        padding: 1px 15px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 18px;
+        border-radius: 2px 2px 12px black;
+        position: relative;
+        box-shadow: 2px 2px 12px black;
+    }
+    
+    .s-box:hover {
+        transform: translateY(-10px);
+        transform: all ease 0.5s;
+    }
+    
+    .s-b-text a:hover {
+        color: rgb(31, 30, 30);
+    }
+    
+    #portfolio {
+        width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 60px 2% 20px 2%;
+    }
+    
+    .port-heading {
+        color: black;
+        font-size: 1.7rem;
+        text-align: center;
+        font-weight: 700;
+        padding: 10px 20px;
+        letter-spacing: 2px;
+        border-radius: 3px;
+        box-shadow: 2px 2px 2px black;
+    }
+    
+    .p-box {
+        background-color: white;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 2px 2px 13px black;
+        position: relative;
+    }
+    
+    .p-b-container {
+        width: 90%;
+        height: 70vh;
+        display: grid;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px;
+    }
+    
+    .text-overlay {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgba(0, 181, 253, 0.548);
+        display: none;
+    }
+    
+    .text-overlay h1,
+    p {
+        color: rgb(255, 255, 255);
+    }
+    
+    .text-overlay h1 {
+        font-size: 2.2rem;
+        margin: 0px;
+        padding: 0px;
+        letter-spacing: 2px;
+    }
+    
+    .text-overlay p {
+        font-size: 1.3rem;
+        margin: 0px;
+    }
+    
+    .p-box:hover .text-overlay {
+        display: flex;
+    }
+    
+    .p-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    #contact-btn h1 {
+        font-size: 2rem;
+        color: black;
+        margin: 10px;
+        padding: 5px;
+        letter-spacing: 4px;
+        border-bottom: 2px solid black;
+    }
+    
+    #contact-btn {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 200px;
+        background-color: rgb(218, 218, 218);
+        margin: 20px 0px;
+        box-sizing: border-box;
+        box-shadow: 2px 2px 20px black;
+    }
+    
+    #contact-btn a {
+        color: rgb(255, 255, 255);
+        font-size: 1.2rem;
+        width: 150px;
+        margin: 10px;
+        background-color: rgb(0, 0, 0);
+        box-shadow: 2px 2px 12px black;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    
+    #contact-btn a:hover {
+        background-color: rgb(0, 97, 136);
+        transition: all ease 0.5s;
+        font-weight: 700;
+    }
+    
+    #contact-form {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #contact-form form {
+        display: flex;
+        width: 70%;
+        height: 60vh;
+        background-color: white;
+        box-shadow: 2px 2px 20px black;
+        border: 1px solid rgba(255, 255, 255, 0.01);
+    }
+    
+    .contact-left {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-right {
+        width: 60%;
+        height: 100%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border-left: 1px solid rgba(255, 255, 255, 0.01);
+    }
+    
+    .c-l-heading {
+        color: rgb(0, 0, 0);
+        font-size: 3rem;
+        letter-spacing: 2px;
+        font-weight: 200;
+    }
+    
+    .f-name,
+    .f-email {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .f-email font,
+    .f-name font {
+        color: black;
+        font-size: 22px;
+    }
+    
+    .f-email input,
+    .f-name input {
+        height: 30px;
+        width: 250px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        border-bottom: 1px solid black;
+        margin: 10px 0px;
+    }
+    
+    .f-email input::placeholder,
+    .f-name input::placeholder {
+        opacity: 0.5;
+        letter-spacing: 1px;
+    }
+    
+    .f-email input:focus,
+    .f-name input:focus {
+        border-bottom: 1px solid black;
+        transition: all ease 0.5s;
+    }
+    
+    .message font {
+        font-size: 18px;
+        color: black;
+    }
+    
+    .message {
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .contact-right textarea {
+        width: 100% !important;
+        height: 320px !important;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        box-sizing: border-box;
+        color: black;
+        font-size: 18px;
+    }
+    
+    .conatct-right textarea::placeholder {
+        color: black;
+        font-size: 18px;
+        letter-spacing: 2px;
+    }
+    
+    .contact-right button {
+        width: 100%;
+        height: 100px;
+        background-color: rgb(0, 0, 0);
+        font-weight: bold;
+        outline: none;
+        margin: 0px;
+        color: rgb(255, 255, 255);
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        padding: 12px 4px 14px 4px;
+    }
+    
+    @media(max-width:1190px) {
+        .firstsection {
+            background-size: 1150px;
+        }
+        .name {
+            left: 10%;
+            top: 50%;
+            transform: translate(-10%, -50%);
+        }
+        .about-mode img {
+            height: 400px;
+        }
+        #service {
+            height: auto;
+        }
+        .s-b-container {
+            flex-wrap: wrap;
+        }
+        .s-box {
+            flex-grow: 1;
+        }
+        .s-b-text {
+            text-align: center;
+        }
+        #contact-form form {
+            width: 95% !important;
+        }
+    }
+    
+    @media(max-width: 970px) {
+        .firstsection {
+            background-image: none !important;
+        }
+        .name {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .about-mode {
+            display: none;
+        }
+        #about {
+            justify-content: center;
+            padding: 0px;
+        }
+        .about-text {
+            width: 90%;
+        }
+        .about-text h1 {
+            font-size: 4rem;
+        }
+        .p-b-container {
+            width: 100%;
+        }
+    }
+    
+    @media(max-width: 900px) {
+        .toggle {
+            display: block;
+        }
+        .toggle:before {
+            content: '\f0c9';
+            font-family: fontAwesome;
+            line-height: 0px;
+            margin-left: -35px;
+        }
+        nav {
+            padding: 20px 40px;
+        }
+        nav ul {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            box-sizing: border-box;
+            background-color: rgb(255, 255, 255);
+            top: 50px;
+            left: 0;
+            transition: 0.5s;
+            overflow: hidden;
+            border: 3px solid rgb(255, 255, 255);
+            display: none !important;
+            margin: 0px;
+            padding: 0px;
+        }
+        nav ul li a {
+            border-bottom: 1px solid rgb(209, 206, 206);
+            width: 100%;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0px !important;
+            padding: 11px !important;
+        }
+        .active-menu {
+            display: block !important;
+        }
+        .p-b-container {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            height: auto;
+            grid-gap: 10px;
+        }
+        #contact-btn h1 {
+            font-size: 1.4rem;
+            align-items: center;
+        }
+        #contact-form {
+            padding: 20px;
+            height: auto;
+            box-sizing: border-box;
+        }
+        #contact-form form {
+            flex-direction: column;
+            height: auto;
+            padding: 20%;
+            width: 90% !important;
+        }
+        .contact-left,
+        .contact-right {
+            width: 100%;
+            border: none;
+        }
+        .f-email,
+        .f-name {
+            width: 100%;
+        }
+        .f-email input,
+        .f-name input {
+            width: 100%;
+            border: none;
+            background-color: rgb(200, 200, 200) !important;
+            padding: 10px;
+            box-sizing: border-box;
+            height: 40px;
+        }
+        textarea {
+            background-color: rgb(190, 191, 192) !important;
+            margin: 10px 0px;
+            padding: 10px;
+            height: 200px !important;
+            width: 100% !important;
+        }
+        .message {
+            margin: 0px;
+        }
+        #contact-form form h1 {
+            margin: 5px 0px;
+        }
+    }
+    
+    @media(max-width: 600px) {
+        .p-b-container {
+            grid-template-columns: 1fr;
+        }
+        #contact-btn h1 {
+            font-size: 1.2rem;
+            margin: 0px 10px;
+        }
+        .name {
+            width: 60%;
+        }
+        .arrow {
+            margin-bottom: 20px;
+        }
+        .soci {
+            left: 30px;
+            transform: translateX(-30px);
+        }
+    }
+    
+    @media(max-width: 400px) {
+        .s-box {
+            width: 100%;
+            height: 400px;
+        }
+    }
+    
+    .contact-right button:hover {
+        background-color: rgb(55, 0, 252);
+        transition: all ease 0.4s;
+    }
+</style>
+
+<body>
+    <!-- navbar -->
+    <section class="firstsection">
+        <nav class="navbar">
+            <a href="#" class="mylogo">PortF</a>
+
+
+            <div class="toggle"></div>
+            <!-- my logo -->
+            <ul class="unorder">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About Me</a></li>
+                <li><a href="#">Services</a></li>
+                <li>
+                    <a href="#">PortFolio</a>
+                </li>
+            </ul>
+            <a href="#" class="en">en</a>
+        </nav>
+
+        <div class="name">
+            <p>Hello
+            </p>
+            <h1>I'm
+
+                <font color="blue"> Basheer</font>
+
+
+            </h1>
+            <p class="details">Im Mohammed basheer Ahmed studying degree recently i completed my first frontend project. Contact me if you have any project in your mind</p>
+            <a href="#" class="cv">Download Cv</a>
+        </div>
+        <div class="soci">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <div class="arrow">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section id="about">
+        <div class="about-text">
+            <h1>About
+                <font color="blue">Me</font>
+            </h1>
+            <h2>FrontEnd Developer</h2>
+            <p>HyperText Markup Language (HTML) is the standard markup language used to create web pages. A markup language is your way of making notes in a digital document that can be distinguished from regular text. It’s the most basic building block
+                you’ll need for developing websites. CSS (Cascading Style Sheets) is the language used to present the document you create with HTML. Where HTML comes first and creates the foundation for your page, CSS comes along next and is used to create
+                the page’s layout, color, fonts, and…well, the style! Both of these languages are absolutely essential to being a front end developer. Simply put, no HTML/CSS, no web development.</p>
+            <div class="btn"> <button>More Details</button></div>
+        </div>
+        <div class="about-mode">
+            <a href="#"><img src="data:image/png;base64,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"
+                    alt="" srcset=""></a>
+        </div>
+
+    </section>
+    <section id="service">
+        <div class="s-heading">
+            <h1>Service</h1>
+            <p>Here is some Services.Which we provide
+                <font color="red">you</fontcolor>
+            </p>
+
+        </div>
+        <!-- services box container -->
+        <div class="s-b-container">
+            <!-- box 1 -->
+            <div class="s-box">
+
+
+                <div class="s-b-img">
+                    <!-- image -->
+                    <div class="s-b-type">Front-End</div>
+                    <img src="img2.jpg" alt="img" srcset="">
+                </div>
+
+
+                <div class="s-b-text">
+                    <a href="#">Front end services are administrative type services where you need to have “office hours” or availability during the work day for your clients or their clients. Services such as answering phones or email, scheduling appointments, anything
+                customer service related would be a front-end service</a>
+
+                </div>
+            </div>
+            <!-- box 2 -->
+            <div class="s-box">
+
+
+                <div class="s-b-img">
+                    <div class="s-b-type">Back-End</div>
+                    <img src="img1.jpg" alt="img" srcset="">
+                </div>
+
+
+                <div class="s-b-text">
+                    <a href="#">Front end services are administrative type services where you need to have “office hours” or availability during the work day for your clients or their clients. Services such as answering phones or email, scheduling appointments, anything
+                        customer service related would be a front-end service</a>
+
+                </div>
+            </div>
+            <!-- box 3 -->
+            <div class="s-box">
+
+
+                <div class="s-b-img">
+                    <div class="s-b-type">SEO</div>
+                    <img src="img3.jpg" alt="img" srcset="">
+                </div>
+
+
+                <div class="s-b-text">
+                    <a href="#">Front end services are administrative type services where you need to have “office hours” or availability during the work day for your clients or their clients. Services such as answering phones or email, scheduling appointments, anything
+                        customer service related would be a front-end service</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- port section -->
+
+    <section id="portfolio">
+
+        <h1 class="port-heading">PortFolio</h1>
+        <div class="p-b-container">
+            <!-- box 1 -->
+            <div class="p-box">
+                <!-- text -->
+                <div class="text-overlay">
+                    <h1>Understand</h1>
+
+                    <p>client project</p>
+                </div>
+                <img src="port1.jpg" alt="Understand">
+            </div>
+
+            <!-- box 2-->
+
+            <div class="p-box">
+                <!-- text -->
+                <div class="text-overlay">
+                    <h1>Think</h1>
+
+                    <p>client project</p>
+                </div>
+                <img src="port2.jpg" alt="think">
+            </div>
+
+
+            <!-- box 3-->
+
+            <div class="p-box">
+                <!-- text -->
+                <div class="text-overlay">
+                    <h1>Book</h1>
+
+                    <p>client project</p>
+                </div>
+                <img src="port3.jpg" alt="book">
+            </div>
+
+
+            <!-- box 4-->
+            <div class="p-box">
+                <!-- text -->
+                <div class="text-overlay">
+                    <h1>Time</h1>
+
+                    <p>client project</p>
+                </div>
+                <img src="port4.jpg" alt="tme">
+            </div>
+
+            <!-- box 5-->
+
+            <div class="p-box">
+                <!-- text -->
+                <div class="text-overlay">
+                    <h1>Idea</h1>
+
+                    <p>client project</p>
+                </div>
+                <img src="port5.jpg" alt="tme">
+            </div>
+
+            <!-- box 6-->
+
+            <div class="p-box">
+                <!-- text -->
+                <div class="text-overlay">
+                    <h1>Writing</h1>
+
+                    <p>client project</p>
+                </div>
+                <img src="port6.jpg" alt="tme">
+            </div>
+        </div>
+    </section>
+    <section id="contact-btn">
+        <!-- heading -->
+        <h1>If you have any
+            <font color="red">project</font> in your Mind?</h1>
+        <!-- btn -->
+        <a href="#">Contact Me</a>
+    </section>
+
+
+    <!-- contact form -->
+    <section id="contact-form">
+
+        <form>
+            <div class="contact-left">
+
+                <h1 class="c-l-heading">
+                    <font style="border-bottom: 3px solid blue;"> Write</font> Us</h1>
+                <!--form name -->
+                <div class="f-name">
+                    <font>Name</font>
+                    <input type="text" placeholder="FullName">
+                </div>
+                <!-- email -->
+                <div class="f-email">
+                    <font>Email</font>
+                    <input type="text" placeholder="Ex:@gmail.com">
+                </div>
+            </div>
+
+            <div class="contact-right">
+                <!-- message -->
+                <div class="message">
+                    <font>Message</font>
+                    <textarea name="text" id="" cols="20" rows="5" placeholder="Write a message....."></textarea>
+                    <!-- submit -->
+                </div>
+                <button>Submit</button>
+
+            </div>
+
+
+
+        </form>
+    </section>
+
+
+
+
+
+
+    <script type="text/javascript" src="js.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.toggle').click(function() {
+                $('.toggle').toggleClass('active')
+                $('nav ul ').toggleClass('active-menu')
+            })
+        })
+    </script>
+
+</body>
+
+</html>
